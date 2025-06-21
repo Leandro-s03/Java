@@ -24,7 +24,7 @@ public class Persona {
     }
 
     public static void main(String[] args) {
-        Persona p1 = new Persona("Ana", 25);
+        Persona p1 = new Persona("Lucas", 25);
         System.out.println("Nombre: " + p1.getNombre());
         System.out.println("Edad: " + p1.getEdad());
     }
