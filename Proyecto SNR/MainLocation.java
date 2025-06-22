@@ -44,5 +44,6 @@ public class MainLocation {
         loc.update(idUsuarioQueModifica);
         loc.read();
         loc.delete();
+        
     }
 }

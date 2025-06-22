@@ -37,5 +37,8 @@ archivo.setStatus("archivado");
 // Volver a imprimir con getter para ver el cambio
 System.out.println("Nuevo estado: " + archivo.getStatus());
 
+
+
+
     }
 }
