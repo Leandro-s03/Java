@@ -27,5 +27,15 @@ public class Main {
 
         // Marcar como eliminado
         archivo.deleteAttachment();
+        // Imprimir algunos valores con getters
+    System.out.println("El archivo fue creado por el usuario con ID: " + archivo.getIdUser());
+System.out.println("Estado actual: " + archivo.getStatus());
+
+// Cambiar el estado usando un setter
+archivo.setStatus("archivado");
+
+// Volver a imprimir con getter para ver el cambio
+System.out.println("Nuevo estado: " + archivo.getStatus());
+
     }
 }
