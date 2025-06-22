@@ -1,51 +1,49 @@
-import java.time.LocalDate;
+import java.util.Date;
 
 public class Location {
-    // Atributos
-    private int idLocation;
-    private int idDistrict;
+    private int id_location;
+    private int id_district;
     private String street;
     private String numeration;
     private String reference;
-    private int idUserCreate;
-    private int idUserUpdate;
-    private LocalDate dateCreate;
-    private LocalDate dateUpdate;
+    private int id_user_create;
+    private int id_user_update;
+    private Date date_create;
+    private Date date_update;
 
-    // Constructor vacío
-    public Location() {}
-
-    // Constructor con parámetros
-    public Location(int idLocation, int idDistrict, String street, String numeration, String reference,
-                    int idUserCreate, int idUserUpdate, LocalDate dateCreate, LocalDate dateUpdate) {
-        this.idLocation = idLocation;
-        this.idDistrict = idDistrict;
+    // Constructor
+    public Location(int id_location, int id_district, String street, String numeration, String reference,
+                    int id_user_create, int id_user_update, Date date_create, Date date_update) {
+        this.id_location = id_location;
+        this.id_district = id_district;
         this.street = street;
         this.numeration = numeration;
         this.reference = reference;
-        this.idUserCreate = idUserCreate;
-        this.idUserUpdate = idUserUpdate;
-        this.dateCreate = dateCreate;
-        this.dateUpdate = dateUpdate;
+        this.id_user_create = id_user_create;
+        this.id_user_update = id_user_update;
+        this.date_create = date_create;
+        this.date_update = date_update;
     }
 
-    // Getters y Setters
-    public int getIdLocation() {
-        return idLocation;
+    // ✅ Getters y setters corregidos
+
+    public int getId_location() {
+        return id_location;
     }
 
-    public void setIdLocation(int idLocation) {
-        this.idLocation = idLocation;
+    public void setId_location(int id_location) {
+        this.id_location = id_location;
     }
 
-    public int getIdDistrict() {
-        return idDistrict;
+    public int getId_district() {
+        return id_district;
     }
 
-    public void setIdDistrict(int idDistrict) {
-        this.idDistrict = idDistrict;
+    public void setId_district(int id_district) {
+        this.id_district = id_district;
     }
 
+    // ❌ ERROR: antes usaba int en vez de String
     public String getStreet() {
         return street;
     }
@@ -70,59 +68,72 @@ public class Location {
         this.reference = reference;
     }
 
-    public int getIdUserCreate() {
-        return idUserCreate;
+    public int getId_user_create() {
+        return id_user_create;
     }
 
-    public void setIdUserCreate(int idUserCreate) {
-        this.idUserCreate = idUserCreate;
+    public void setId_user_create(int id_user_create) {
+        this.id_user_create = id_user_create;
     }
 
-    public int getIdUserUpdate() {
-        return idUserUpdate;
+    // ❌ ERROR: antes usaba int, ahora se usa Date
+    public Date getDate_create() {
+        return date_create;
     }
 
-    public void setIdUserUpdate(int idUserUpdate) {
-        this.idUserUpdate = idUserUpdate;
+    public void setDate_create(Date date_create) {
+        this.date_create = date_create;
     }
 
-    public LocalDate getDateCreate() {
-        return dateCreate;
+    public int getId_user_update() {
+        return id_user_update;
     }
 
-    public void setDateCreate(LocalDate dateCreate) {
-        this.dateCreate = dateCreate;
+    public void setId_user_update(int id_user_update) {
+        this.id_user_update = id_user_update;
     }
 
-    public LocalDate getDateUpdate() {
-        return dateUpdate;
+    public Date getDate_update() {
+        return date_update;
     }
 
-    public void setDateUpdate(LocalDate dateUpdate) {
-        this.dateUpdate = dateUpdate;
+    public void setDate_update(Date date_update) {
+        this.date_update = date_update;
     }
 
-    // Métodos funcionales (simulan CRUD)
+    // ❌ ERROR: mal escrito "tostring" → debe ser toString (con S mayúscula)
+    @Override
+    public String toString() {
+        return "Location{" +
+                "id_location=" + id_location +
+                ", id_district=" + id_district +
+                ", street='" + street + '\'' +
+                ", numeration='" + numeration + '\'' +
+                ", reference='" + reference + '\'' +
+                ", id_user_create=" + id_user_create +
+                ", id_user_update=" + id_user_update +
+                ", date_create=" + date_create +
+                ", date_update=" + date_update +
+                '}';
+    }
 
-    public void create() {
-        System.out.println("📌 Ubicación creada: " + street + " " + numeration);
+    public void create(int idUsuarioActual) {
+        this.id_user_create = idUsuarioActual;
+        this.date_create = new Date(); // Fecha actual
+        System.out.println("Ubicación creada por usuario ID: " + idUsuarioActual + " en " + this.date_create);
     }
 
     public void read() {
-        System.out.println("📍 Ubicación:");
-        System.out.println("Calle: " + street + ", Número: " + numeration);
-        System.out.println("Referencia: " + reference);
-        System.out.println("Fecha de creación: " + dateCreate);
+        System.out.println(this.toString());
     }
 
-    public void update(String newStreet, String newReference) {
-        this.street = newStreet;
-        this.reference = newReference;
-        this.dateUpdate = LocalDate.now();
-        System.out.println("🛠️ Ubicación actualizada.");
+    public void update(int idUsuarioActual) {
+        this.id_user_update = idUsuarioActual;
+        this.date_update = new Date(); // Fecha actual
+        System.out.println("Ubicación actualizada por usuario ID: " + idUsuarioActual + " en " + this.date_update);
     }
 
     public void delete() {
-        System.out.println("🗑️ Ubicación eliminada (simulada).");
+        System.out.println("Ubicación eliminada: " + this.toString());
     }
 }
