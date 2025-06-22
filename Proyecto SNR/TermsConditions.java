@@ -38,5 +38,5 @@ public class TermsConditions {
     public int getIdTerms() { return idTerms; }
     public void setIdTerms(int idTerms) { this.idTerms = idTerms; }
 
-    // (Otros getters y setters opcionales)
+    
 }

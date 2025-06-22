@@ -31,5 +31,5 @@ public class TermsAgree {
 
     public void setIdTerms(int idTerms) { this.idTerms = idTerms; }
 
-    // (Otros getters y setters opcionales)
+    
 }
