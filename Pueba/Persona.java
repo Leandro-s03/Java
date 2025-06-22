@@ -1,3 +1,4 @@
+package Pueba;
 public class Persona {
     private String nombre;
     private int edad;
@@ -28,4 +29,5 @@ public class Persona {
         System.out.println("Nombre: " + p1.getNombre());
         System.out.println("Edad: " + p1.getEdad());
     }
+
 }
