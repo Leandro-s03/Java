@@ -32,5 +32,17 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-}
 
+    public void update(int id, String nombre, String email) {
+        this.id = id;
+        this.nombre = nombre;
+        this.email = email;
+    }
+
+    public void mostrarDatos() {
+        System.out.println("Id: " + id);
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Email: " + email);
+    }
+
+}
