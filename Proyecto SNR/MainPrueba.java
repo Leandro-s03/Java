@@ -3,7 +3,7 @@ import java.time.LocalDate;
 public class MainPrueba {
     public static void main(String[] args) {
         // Creamos el usuario que hará el reclamo
-        User usuario = new User(1, "Juan", "juan123@gmail.com");
+        User usuario = new User(1, "Juan", "juan123@gmail.com", "Gomez");
 
         // Creamos la ubicación
         Location ubicacion = new Location(
