@@ -64,6 +64,36 @@ public class User {
                 + " y correo electronico " + email);
     }
 
+    // metodo de crear usuario
+    public void create(int id, String nombre, String email, String lastName) {
+        this.id = id;
+        this.nombre = nombre;
+        this.email = email;
+        this.lastName = lastName;
+        System.out.println("Usuario creado con exito!");
+    }
+
+    // metodo de ver usuario
+    public void read(int id, String nombre, String email, String lastName) {
+        System.out.println("id: " + id + "nombre : " + nombre + "email: " + email + "apellido: " + lastName);
+    }
+
+    // metodo de actualizar usuario
+    public void update(int id, String nombre, String email, String lastName) {
+        this.id = id;
+        this.nombre = nombre;
+        this.email = email;
+        this.lastName = lastName;
+        System.out.println("Se actualizo el usuario con exito!");
+    }
+
+    // metodo para borrar usuario
+    public void delete() {
+        this.nombre = null;
+        this.email = null;
+        this.lastName = null;
+    }
+
     public static void main(String[] args) {
 
         User usuario1 = new User(1, "Leandro", "leandro@gmail.com", "Seguel");
@@ -86,6 +116,8 @@ public class User {
         usuario1.setNombre("Juancito");
         // Muetro en pantalla el nombre actualizado.
         System.out.println("Nombre actualizado a: " + usuario1.getNombre());
-
+        // Metodos de create, read, update, delete
+        usuario1.read(usuario1.getId(), usuario1.getNombre(), usuario1.getEmail(), usuario1.getLastName());
+        usuario1.update(999, "German", "ger@outlook.es", "Garcia");
     }
 }
