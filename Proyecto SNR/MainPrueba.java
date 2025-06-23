@@ -34,5 +34,6 @@ public class MainPrueba {
 
         // Mostramos los datos del reclamo
         reclamo.read();
+        ubicacion.read();
     }
 }
