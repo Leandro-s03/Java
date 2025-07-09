@@ -32,5 +32,6 @@ public class Admin extends User {
         Admin admin2 = new Admin(2, "tomas", "tomas@gmail.com", "gomez", "MEDIO");
         admin2.mostrarPermiso();
         admin2.mostrarDatos();
+
     }
 }

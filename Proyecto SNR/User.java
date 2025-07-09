@@ -119,5 +119,7 @@ public class User {
         // Metodos de create, read, update, delete
         usuario1.read(usuario1.getId(), usuario1.getNombre(), usuario1.getEmail(), usuario1.getLastName());
         usuario1.update(999, "German", "ger@outlook.es", "Garcia");
+        usuario1.setNombre(null);
+        System.out.println(usuario1);
     }
 }
